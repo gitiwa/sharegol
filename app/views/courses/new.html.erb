@@ -1,2 +1,14 @@
-<h1>Courses#new</h1>
-<p>Find me in app/views/courses/new.html.erb</p>
+<div class="search">
+  <div class="row">
+    <div class="text-center">
+      <%= form_tag(new_course_path, method: :get, class: 'form-inline') do %>
+        <div class="form-group">
+          <%= text_field_tag :keyword, @keyword, class: 'form-control input-lg', placeholder: "キーワードを入力", size: 40 %>
+        </div>
+        <%= submit_tag 'コースを検索', class: 'btn btn-success btn-lg' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<%= render 'courses', courses: @courses %>
