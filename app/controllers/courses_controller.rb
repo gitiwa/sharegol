@@ -18,27 +18,12 @@ class CoursesController < ApplicationController
     end
   end
   
-  #以下確認が必要
-    private
-
-  def read(result)
-    code = result['golfCourseId']
-    name = result['golfCourseName']
-    detail_url = result['golfCourseDetailUrl']
-    course_image_url = result['golfCourseImageUrl']
-    address = result['address']
-    captiorn = result['golfCourseCaption']
-    evaluation = result['evaluation']
-    
-    {
-      code: code,
-      name: name,
-      detail_url: detail_url,
-      course_image_url: course_image_url,
-      address: address,
-      captiorn: captiorn,
-      evaluation: evaluation
-    }
+  #移動した。application_controllerに。
+  
+  
+  def show
+    @course = Course.find(params[:id])
+    @gone_users = @course.gone_users
   end
   
 end

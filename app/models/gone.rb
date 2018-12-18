@@ -1,0 +1,2 @@
+class Gone < Went
+end

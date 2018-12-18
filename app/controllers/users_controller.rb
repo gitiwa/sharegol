@@ -3,6 +3,8 @@ class UsersController < ApplicationController
  
   def show
     @user = User.find(params[:id])
+    @courses = @user.courses.uniq
+    @count_gone = @user.gone_courses.count
   end
 
   def new

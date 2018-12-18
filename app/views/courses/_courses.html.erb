@@ -1,4 +1,4 @@
-<% if courses %>
+<% if courses.present? %>
   <div class="row">
     <% courses.each do |course| %>
       <div class="course">
@@ -8,7 +8,20 @@
               <img src="<%= course.course_image_url %>" alt="" >
             </div>
             <div class="panel-body">
-              <p class="course-title"><%= course.name %></p>
+              
+              
+               <% if course.persisted? %>
+                <p class="course-title"><%= link_to course.name, course %></p>
+               <% else %>
+                <p class="course-title"><%= course.name %></p>
+               <% end %>
+              
+              
+              <div class="buttons text-center">
+                <% if logged_in? %>
+                 <%= render 'gones/gone_button', course: course %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>

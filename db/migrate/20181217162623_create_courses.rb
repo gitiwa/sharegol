@@ -6,7 +6,7 @@ class CreateCourses < ActiveRecord::Migration[5.0]
       t.string :detail_url
       t.string :course_image_url
       t.string :address
-      t.string :captiorn
+      t.string :caption
       t.float :evaluation
 
       t.timestamps

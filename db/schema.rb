@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181217162623) do
+ActiveRecord::Schema.define(version: 20181218105649) do
 
   create_table "courses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "code"
@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20181217162623) do
     t.string   "detail_url"
     t.string   "course_image_url"
     t.string   "address"
-    t.string   "captiorn"
+    t.string   "caption"
     t.float    "evaluation",       limit: 24
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
@@ -32,4 +32,17 @@ ActiveRecord::Schema.define(version: 20181217162623) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "wents", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "type"
+    t.integer  "user_id"
+    t.integer  "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_wents_on_course_id", using: :btree
+    t.index ["user_id", "course_id", "type"], name: "index_wents_on_user_id_and_course_id_and_type", unique: true, using: :btree
+    t.index ["user_id"], name: "index_wents_on_user_id", using: :btree
+  end
+
+  add_foreign_key "wents", "courses"
+  add_foreign_key "wents", "users"
 end
