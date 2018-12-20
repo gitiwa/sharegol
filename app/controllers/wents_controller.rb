@@ -1,4 +1,4 @@
-class GonesController < ApplicationController
+class WentsController < ApplicationController
 
   def create
     @course = Course.find_or_initialize_by(code: params[:course_code])
@@ -6,15 +6,9 @@ class GonesController < ApplicationController
     unless @course.persisted?
       # @course が保存されていない場合、先に @course を保存する
       # 下記はidによる検索はできないので、RakutenWebService::Gora::CourseDetailの導線を設定してあげる必要があります。
-      
-      #results = RakutenWebService::Gora::Course.search(courseCode: @course.code)
-      #@course = Course.new(read(results.first))
-      
-      #お試しでOff
-      
-      results_results = RakutenWebService::Gora::CourseDetail.search(golfCourseId: @course.code)
-      @course = Course.new(read(results_results.first))
-      
+      results = RakutenWebService::Gora::Course.search(courseCode: @course.code)
+
+      @course = Course.new(read(results.first))
       @course.save
     end
 

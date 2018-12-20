@@ -11,6 +11,9 @@ Rails.application.routes.draw do
   
   resources :courses, only: [:new,:show]
   resources :gones, only: [:create, :destroy]
-
+  #resources :wents, only: [:create, :destroy]
+  #12/19
+  
+  get 'rankings/gone', to: 'rankings#gone'
   
 end

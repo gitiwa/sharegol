@@ -12,7 +12,7 @@ class CoursesController < ApplicationController
       })
 
       results.each do |result|
-        course = Course.new(read(result))
+        course = Course.new(readread(result))
         @courses << course
       end
     end

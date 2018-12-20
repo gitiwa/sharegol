@@ -1,6 +1,7 @@
-<% if courses.present? %>
+<h1>行きたいランキング</h1>
+<% if @courses.present? %>
   <div class="row">
-    <% courses.each do |course| %>
+    <% @courses.each_with_index do |course, index| %>
       <div class="course">
         <div class="col-md-3 col-sm-4 col-xs-12">
           <div class="panel panel-default">
@@ -8,20 +9,15 @@
               <img src="<%= course.course_image_url %>" alt="" >
             </div>
             <div class="panel-body">
-              
-              
-               <% if course.persisted? %>
-                <p class="course-title"><%= link_to course.name, course %></p>
-               <% else %>
-                <p class="course-title"><%= course.name %></p>
-               <% end %>
-              
-              
+              <p class="course-title"><%= link_to course.name, course %></p>
               <div class="buttons text-center">
                 <% if logged_in? %>
-                 <%= render 'wents/gone_button', course: course %>
+                  <%= render 'wents/gone_button', course: course %>
                 <% end %>
               </div>
+            </div>
+            <div class="panel-footer">
+              <p class="text-center"><%= index+1 %>位: <%= @ranking_counts[course.id] %> 行きたいポイント</p>
             </div>
           </div>
         </div>
