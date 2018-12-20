@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20181218105649) do
     t.string   "detail_url"
     t.string   "course_image_url"
     t.string   "address"
-    t.string   "caption"
+    t.text     "caption",          limit: 65535
     t.float    "evaluation",       limit: 24
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

@@ -6,7 +6,7 @@ class CreateCourses < ActiveRecord::Migration[5.0]
       t.string :detail_url
       t.string :course_image_url
       t.string :address
-      t.string :caption
+      t.text :caption#文字数が多い場合に保存ができなかったのでTextに変更。
       t.float :evaluation
 
       t.timestamps
