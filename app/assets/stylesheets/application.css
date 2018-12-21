@@ -44,6 +44,13 @@ footer {
   letter-spacing: 0.15em;
 }
 
+.cover .cover-inner .cover-contents h4 {
+  margin: 0 0 20px 0;
+  color: #66cd00;
+  font-weight: bold;
+  letter-spacing: 0.15em;
+}
+
 /* search */
 .search {
   margin-bottom: 20px;

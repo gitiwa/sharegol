@@ -9,13 +9,11 @@
             </div>
             <div class="panel-body">
               
-              
                <% if course.persisted? %>
                 <p class="course-title"><%= link_to course.name, course %></p>
                <% else %>
                 <p class="course-title"><%= course.name %></p>
                <% end %>
-              
               
               <div class="buttons text-center">
                 <% if logged_in? %>

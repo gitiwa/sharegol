@@ -7,6 +7,7 @@
         </div>
         <div class="panel-body">
           <p class="course-title"><%= @course.name %></p>
+          <p class="course-title">楽天口コミの評価：<%= @course.evaluation %></p>
           <div class="buttons text-center">
             <%= render 'wents/gone_button', course: @course %>
           </div>
@@ -19,7 +20,7 @@
     <div class="gone_users-users">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
-          Goneしたユーザ
+          「行きたい！」と思ってるユーザ
         </div>
         <div class="panel-body">
           <% @gone_users.each do |user| %>

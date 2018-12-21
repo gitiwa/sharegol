@@ -26,7 +26,5 @@ class User < ApplicationRecord
     self.gone_courses.include?(course)
   end
   
-  
-  
   has_secure_password
 end
