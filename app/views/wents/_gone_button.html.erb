@@ -2,13 +2,13 @@
   <%= form_tag(gone_path(course.id), method: :delete) do %>
     <%= hidden_field_tag :course_id, course.id %>
     <%= hidden_field_tag :type, 'Gone' %>
-    <%= submit_tag 'Ungone', class: 'btn btn-success' %>
+    <%= submit_tag '行きたくない。。', class: 'btn btn-success' %>
   <% end %>
 <% else %>
   <%= form_tag(gones_path) do %>
     <%= hidden_field_tag :course_code, course.code %>
     <%= hidden_field_tag :course_name, course.name %>
     <%= hidden_field_tag :type, 'Gone' %>
-    <%= submit_tag 'Gone', class: 'btn btn-primary' %>
+    <%= submit_tag '行ってみたい！！', class: 'btn btn-primary' %>
   <% end %>
 <% end %>
