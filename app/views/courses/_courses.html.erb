@@ -11,6 +11,7 @@
               
                <% if course.persisted? %>
                 <p class="course-title"><%= link_to course.name, course %></p>
+                <p class="course-title2">楽天口コミの評価：<%= course.evaluation %></p>
                <% else %>
                 <p class="course-title"><%= course.name %></p>
                <% end %>

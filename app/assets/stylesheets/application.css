@@ -58,7 +58,7 @@ footer {
 
 /* course */
 .course .panel-body {
-  height: 120px;
+  height: 150px;
 }
 .course .panel-heading {
   height: 250px;
@@ -67,13 +67,19 @@ footer {
   height: 100%;
   max-width: 100%;
 }
-p.course-title {
+.course-title {
   /* 文の行数を2行に保ち、最後に ... を追加するスタイル */
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
 }
+
+.course-title2 {
+  size: 2;
+  color: #00ff00;
+  }
+
 
 /* 追加分 */
 .course .buttons form {
