@@ -31,7 +31,10 @@ class GonesController < ApplicationController
   end
 
   def destroy
+    #@course = Course.find(params[:course_code])#course_idを変更してみる。
     @course = Course.find(params[:course_id])
+    #@course = Course.find(params[:id])
+
 
     if params[:type] == 'Gone'
       current_user.ungone(@course) 

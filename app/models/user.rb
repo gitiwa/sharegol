@@ -22,9 +22,21 @@ class User < ApplicationRecord
     gone.destroy if gone
   end
 
+    #以下変更中1222
   def gone?(course)
     self.gone_courses.include?(course)
+    #binding.pry
+    
+    #self.gone_courses.each do |goneCourse|
+    
+    #binding.pry
+    
+      #if goneCourse.code == course.code
+      # return true
+      #end
+    #end
+    #return false
   end
-  
-  has_secure_password
+
+has_secure_password
 end

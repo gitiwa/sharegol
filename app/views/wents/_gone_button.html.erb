@@ -1,6 +1,15 @@
 <% if current_user.gone?(course) %>
+
+<%#=
+  <%= form_tag(gone_path(course.code), method: :delete) do %>
+<%#=
+    <%= hidden_field_tag :course_code, course.code %>
+    
+    
   <%= form_tag(gone_path(course.id), method: :delete) do %>
     <%= hidden_field_tag :course_id, course.id %>
+    
+    
     <%= hidden_field_tag :type, 'Gone' %>
     <%= submit_tag '行きたくない。。', class: 'btn btn-success' %>
   <% end %>
