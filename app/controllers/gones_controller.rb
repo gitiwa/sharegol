@@ -24,7 +24,7 @@ class GonesController < ApplicationController
     # gone 関係として保存
     if params[:type] == 'Gone'
       current_user.gone(@course)
-      flash[:success] = 'コースを 「行きたい！！」 しました。'
+      flash[:success] = 'コースを 「行きたい！！」 しました。　　　　※コース上のボタンが切り替わらない場合があるため、マイページも併せてご確認ください。'
     end
 
     redirect_back(fallback_location: root_path)
@@ -38,7 +38,7 @@ class GonesController < ApplicationController
 
     if params[:type] == 'Gone'
       current_user.ungone(@course) 
-      flash[:success] = 'コースを 「行きたい！！」 を解除しました。'
+      flash[:success] = 'コースを 「行きたい！！」 を解除しました。　　　　※コース上のボタンが切り替わらない場合があるため、マイページも併せてご確認ください。'
     end
 
     redirect_back(fallback_location: root_path)
