@@ -8,9 +8,11 @@ class User < ApplicationRecord
   
   has_many :wents
   has_many :courses, through: :wents
+  #あってる
   
   has_many :gones
   has_many :gone_courses, through: :gones, source: :course
+  #あってる
   
   
   def gone(course)
@@ -27,13 +29,13 @@ class User < ApplicationRecord
     self.gone_courses.include?(course)
     #binding.pry
     
-    #self.gone_courses.each do |goneCourse|
+   # self.gone_courses.each do |goneCourse|
     
     #binding.pry
     
-      #if goneCourse.code == course.code
-      # return true
-      #end
+    #  if goneCourse.code == course.code
+    #  return true
+    #  end
     #end
     #return false
   end

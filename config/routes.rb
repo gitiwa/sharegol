@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new, :create]
   
   resources :courses, only: [:new,:show]
-  resources :gones, only: [:create, :destroy]
-  #resources :wents, only: [:create, :destroy]
-  #12/19
+  resources :gones, only: [:create, :destroy]#いらないかも？
+  
+  resources :wents, only: [:create, :destroy]
+  #12/22再度復活
   
   get 'rankings/gone', to: 'rankings#gone'
   

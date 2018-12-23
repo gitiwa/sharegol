@@ -18,14 +18,16 @@ class ApplicationController < ActionController::Base
     name = result['golfCourseName']
     
     #detail_url = 'https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/result['golfCourseId']'
-    detail_url = 'https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/' + result['golfCourseId'].to_s
+    #detail_url = 'https://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/' + result['golfCourseId'].to_s
+    detail_url = 'http://booking.gora.golf.rakuten.co.jp/guide/disp/c_id/' + result['golfCourseId'].to_s
     #detail_url = result['golfCourseDetailUrl']#←ここを考える必要がありそう。
     
     #course_image_url = result['golfCourseImageUrl'] #詳細APIのため一旦Off
     course_image_url = result['golfCourseImageUrl1']#←ここを考える必要がありそう。
     
     address = result['address']
-    caption = result['golfCourseCaption']
+    #caption = result['golfCourseCaption']
+    #一度CaptionをOffにしてみる。
     evaluation = result['evaluation']
     
     {
@@ -34,7 +36,7 @@ class ApplicationController < ActionController::Base
       detail_url: detail_url,
       course_image_url: course_image_url,
       address: address,
-      caption: caption,
+      #caption: caption,
       evaluation: evaluation
     }
   end
@@ -49,8 +51,9 @@ class ApplicationController < ActionController::Base
     course_image_url = result['golfCourseImageUrl'] 
     
     address = result['address']
-    caption = result['golfCourseCaption']
-    evaluation = result['evaluation']
+    #caption = result['golfCourseCaption']
+    #一度CaptionをOffにしてみる。
+    #evaluation = result['evaluation']
     
     {
       code: code,
@@ -58,8 +61,8 @@ class ApplicationController < ActionController::Base
       detail_url: detail_url,
       course_image_url: course_image_url,
       address: address,
-      caption: caption,
-      evaluation: evaluation
+      #caption: caption,
+      #evaluation: evaluation
     }
   end
   
